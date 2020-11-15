@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+
+
+<div class="row">
+    <div class="col-lg-4 py-1" *ngFor="let Character of data; let i = index">
+        <div class=" card " style="width: 18rem; ">
+            <img src='{{Character.image}}' class="card-img-top " alt="... ">
+            <div class="card-body ">
+                <h5 class="card-title ">{{Character.name}}</h5>
+                <p class="card-text "><span style="font-weight: bold;">Status: </span> {{Character.status}} </p>
+            </div>
+        </div>
+
+    </div>
+</div>

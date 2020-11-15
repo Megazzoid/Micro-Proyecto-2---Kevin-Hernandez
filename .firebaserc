@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "miniproyecto2-kevinhernandez": {
+      "hosting": {
+        "proyecto2": [
+          "miniproyecto2-kevinhernandez"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "miniproyecto2-kevinhernandez"
+  }
+}

@@ -1,0 +1,55 @@
+<h1 class="text-center"><small>Registro</small> </h1>
+<hr>
+
+
+
+<div class="row animated fadeIn faster text-center">
+    <div class="col mt4">
+
+        <form (ngSubmit)="onSignup(f)" #f="ngForm" novalidate="">
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Email" name="email" required #email="ngModel" ngModel [ngClass]="{'is-invalid':email.errors!=null && email.touched, 'is-valid':email.errors==null}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                    placeholder="Correo electrónico">
+            </div>
+
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" class="form-control" name="password" placeholder="Contraseña" #password="ngModel" required ngModel placeholder="Password" [ngClass]="{'is-invalid':password.errors!=null && password.touched, 'is-valid':password.errors==null}" required
+                    minlength="6">
+            </div>
+
+            <div class="form-group">
+                <label>Confirmar Contraseña</label>
+                <input type="password" class="form-control" name="password2" placeholder="Confirmar contraseña" #password="ngModel" required ngModel placeholder="Password" [ngClass]="{'is-invalid':password.errors!=null && password.touched, 'is-valid':password.errors==null}"
+                    required minlength="6">
+            </div>
+
+
+
+
+
+            <div class="form-group text-center mt10">
+                <button type="submit" class="btn btn-primary w-25">
+          <i class="fa fa-save"></i>
+          Registrarse
+        </button>
+            </div>
+
+
+        </form>
+
+
+    </div>
+</div>
+
+
+<div class="row text-center mt10">
+    <div class="col">
+        <button class="btn  btn-success" routerLink="/login">
+      
+            Volver al login
+    </button>
+    </div>
+</div>

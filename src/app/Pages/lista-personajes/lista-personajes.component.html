@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+
+
+<div class="text-center">
+
+    <button class="btn btn-primary" *ngIf="Opciones.prev != null" (click)="IrAtras()">Pagina anterior</button>
+    <button class="btn btn-primary" *ngIf="Opciones.next != null" (click)="Irsiguiente()">Pagina siguiente</button>
+</div>
+<br>
+
+
+
+<div class="row">
+    <div class="col-lg-4 py-1" *ngFor="let Character of Characters; let i = index">
+        <div class=" card " style="width: 18rem; ">
+            <img src='{{Character.image}}' class="card-img-top " alt="... ">
+            <div class="card-body ">
+                <h5 class="card-title ">{{Character.name}}</h5>
+                <p class="card-text "><span style="font-weight: bold;">Status: </span> {{Character.status}} </p>
+                <a class="btn btn-primary " (click)="IrDetalles(Character.id)">Ver Detalles</a>
+
+                <div class="align-self-end" *ngIf="auth.User | async as User">
+                    <div *ngIf="Character.havelikes == undefined">
+                        <button type="button" class="btn btn-outline-danger" (click)="AgregarFavoritos(Character.id)">Favorito</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>

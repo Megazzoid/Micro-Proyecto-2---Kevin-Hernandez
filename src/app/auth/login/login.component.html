@@ -1,0 +1,72 @@
+<h1 class="text-center">
+    <small>Inicio de sesión</small> </h1>
+<hr>
+
+
+
+
+
+
+<div class="row animated fadeIn faster text-center">
+    <div class="col mt4">
+
+        <form (ngSubmit)="login( f )" #f="ngForm">
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" id="email" name="email" class="form-control" #email="ngModel" ngModel [ngClass]="{'is-invalid':email.errors!=null && email.touched, 'is-valid':email.errors==null}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Correo electrónico">
+            </div>
+
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" class="form-control" id="password" name="password" #password="ngModel" ngModel placeholder="Password" [ngClass]="{'is-invalid':password.errors!=null && password.touched, 'is-valid':password.errors==null}" required minlength="6">
+            </div>
+
+
+
+
+
+            <div class="form-group text-center mt10">
+                <button type="submit" class="btn btn-primary w-25">
+          <i class="fa fa-save"></i>
+          ingresar
+        </button>
+            </div>
+
+
+        </form>
+
+
+    </div>
+</div>
+
+
+<div class="row text-center mt10" style="margin-top: 10px;">
+    <div class="col">
+        <button type="button" (click)="auth.googleLogin()" class="btn btn-google">
+        <i class="fab fa-google" ></i>  Google
+    </button>
+    </div>
+</div>
+
+<br>
+
+<div class="row text-center mt10">
+    <div class="col">
+        <button class="btn btn-danger" routerLink="/register">
+      
+      No tienes Cuenta? Registrate tocando aqui
+    </button>
+    </div>
+</div>
+
+<br>
+
+<div class="row text-center mt10" style="margin-top: 10px;">
+    <div class="col">
+        <button class="btn btn-info" routerLink="/lista">
+      
+      Volver a las listas
+    </button>
+    </div>
+</div>
